@@ -25,6 +25,7 @@ public class Base64Test {
 		assertEquals("qw==", Base64.fromHexString("AB"));
 		assertEquals("q80=", Base64.fromHexString("ABCD"));
 		assertEquals("q83v", Base64.fromHexString("ABCDEF"));
+		assertEquals("q83vEg==", Base64.fromHexString("ABCDEF12"));
 	}
 	
 	@Test

@@ -90,15 +90,8 @@ public class Base64 {
 
 		StringBuilder sb = new StringBuilder();
 		for (int sliceStart = 0; sliceStart < hex.length(); sliceStart += 6) {
-			int sliceSize = hex.length();
-			String slice;
-			if (sliceStart == sliceSize-2) {
-				slice = hex.substring(sliceStart, sliceStart + 2);
-			} else if (sliceStart == sliceSize-4) {
-				slice = hex.substring(sliceStart, sliceStart + 4);
-			} else {
-                slice = hex.substring(sliceStart, sliceStart + 6);
-			}
+			int sliceSize = Math.min(hex.length()-sliceStart, 6);
+			String slice = hex.substring(sliceStart, sliceStart+sliceSize);
             String b64Slice = fromHexSlice(slice);
             sb.append(b64Slice);
 		}
