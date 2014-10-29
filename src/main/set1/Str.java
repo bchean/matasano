@@ -14,5 +14,13 @@ public class Str {
         }
         return pad + s;
     }
+    
+    public static String repeat(String base, int length) {
+        String result = "";
+        for (int i = 0; i < length; i++) {
+            result += base;
+        }
+        return result;
+    }
 
 }

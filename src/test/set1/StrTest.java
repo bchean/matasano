@@ -12,5 +12,11 @@ public class StrTest {
         assertEquals("a", Str.padZeros("a", 1));
         assertEquals("0a", Str.padZeros("a", 2));
     }
+    
+    @Test
+    public void testGenerate() {
+        assertEquals("", Str.repeat("ab", 0));
+        assertEquals("ab", Str.repeat("ab", 1));
+    }
 
 }
