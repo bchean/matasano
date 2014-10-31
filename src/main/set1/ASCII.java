@@ -17,5 +17,12 @@ public class ASCII {
         }
         return asciiStr;
     }
+    
+    public static String decodeHex(String hexString, int hexKey) {
+        String keyStr = Str.makeHexString(hexKey, hexString.length());
+        String xored = XOR.hexStrings(hexString, keyStr);
+        String plain = ASCII.fromHex(xored);
+        return plain;
+    }
 
 }

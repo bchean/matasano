@@ -22,5 +22,13 @@ public class Str {
         }
         return result;
     }
+    
+    public static String makeHexString(int hexValue, int desiredLength) {
+        if (desiredLength % 2 != 0) {
+            throw new IllegalArgumentException("Desired length must be even.");
+        }
+        String hexChar = padZeros(Integer.toHexString(hexValue), 2);
+        return repeat(hexChar, desiredLength/2);
+    }
 
 }

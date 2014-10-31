@@ -11,5 +11,10 @@ public class ASCIITest {
     public void testFromHex() {
         assertEquals("Aa", ASCII.fromHex("4161"));
     }
+    
+    @Test
+    public void testDecodeHex() {
+        assertEquals("ab", ASCII.decodeHex("6261", 0x03));
+    }
 
 }

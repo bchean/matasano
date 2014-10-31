@@ -14,9 +14,14 @@ public class StrTest {
     }
     
     @Test
-    public void testGenerate() {
+    public void testRepeat() {
         assertEquals("", Str.repeat("ab", 0));
         assertEquals("ab", Str.repeat("ab", 1));
+    }
+    
+    @Test
+    public void testMakeHexString() {
+        assertEquals("ffff", Str.makeHexString(0xff, 4));
     }
 
 }
