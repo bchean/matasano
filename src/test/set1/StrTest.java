@@ -20,6 +20,12 @@ public class StrTest {
     }
     
     @Test
+    public void testRepeatUntilLength() {
+        assertEquals("ab", Str.repeatUntilLength("ab", 2));
+        assertEquals("aba", Str.repeatUntilLength("ab", 3));
+    }
+    
+    @Test
     public void testMakeHexString() {
         assertEquals("ffff", Str.makeHexString(0xff, 4));
     }
